@@ -58,10 +58,9 @@ async function startFind(newFind = false) {
       });
     } else {
       totalImg += data.hits.length;
-      render(data.hits);  
-      
+      render(data.hits);       
 
-    const firstItem = document.querySelector('.gallery-item');
+      const firstItem = document.querySelector('.gallery-item');
       if (firstItem) {
       window.scrollBy({
         top: firstItem.getBoundingClientRect().height * 2,

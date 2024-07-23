@@ -27,7 +27,7 @@ export function render(imgList) {
         </div>
     `
     );
-  galleryBox.innerHTML = renderItems.join('');
+  galleryBox.innerHTML += renderItems.join('');
 
   new SimpleLightbox('.gallery-item a', {
     captionsData: 'alt',
