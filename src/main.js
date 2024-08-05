@@ -35,20 +35,19 @@ async function runNextBtn() {
   await startFind();
 }
 
-
 async function startFind(newFind = false) {
-  loader.classList.add('loader-show');
-  nextPageBox.classList.remove('next-page-show');
-  
-  if (newFind) {
-    page = 1;
-    totalImg = 0;
-    gallery.innerHTML = '';
-  } else {
-    page++;
-  }
-
   try {
+    loader.classList.add('loader-show');
+    nextPageBox.classList.remove('next-page-show');
+    
+    if (newFind) {
+      page = 1;
+      totalImg = 0;
+      gallery.innerHTML = '';
+    } else {
+      page++;
+    }
+
     const data = await findImg(qTxt, page);
     if (data.hits.length == 0) {
       iziToast.info({
